@@ -1,0 +1,131 @@
+#N canvas 963 35 954 1010 12;
+#X obj 153 921 dac~;
+#X obj 471 39 tgl 45 0 empty empty ON/OFF 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 471 107 metro 250;
+#X obj 499 156 f;
+#X obj 540 156 + 1;
+#X obj 499 186 % 5;
+#X obj 559 357 vsl 30 128 35 94 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 4305 1;
+#X obj 610 356 vsl 30 128 35 94 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 9981 1;
+#X obj 658 362 vsl 30 128 35 94 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 5812 1;
+#X obj 709 356 vsl 30 128 35 94 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6542 1;
+#X obj 755 357 vsl 30 128 35 94 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7319 1;
+#X floatatom 499 211 5 0 0 0 - - -;
+#X obj 599 269 sel 0 1 2 3 4;
+#X obj 563 310 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 613 311 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 658 312 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 708 313 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 755 312 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 44 471 *~ 1.4;
+#X obj 44 529 clip~ -1 1;
+#X obj 343 703 vsl 30 128 0 1 0 1 empty empty VOLUME 0 -9 0 10 -262144
+-1 -1 6000 1;
+#X obj 200 846 *~ 0.7;
+#X obj 196 742 *~ 0.4;
+#X obj 431 559 t b f;
+#X obj 463 662 mtof;
+#X obj 200 873 clip~ -1 1;
+#X obj 701 235 unpack f f f f f;
+#X msg 670 141 55 60 62 64 69;
+#X obj 405 182 random 4;
+#X floatatom 405 207 5 0 0 0 - - -;
+#X obj 48 670 delread4~ delay1;
+#X obj 37 746 send~ feedback1;
+#X obj 206 357 receive~ feedback1;
+#X text 101 614 <--;
+#X obj 44 416 osc~;
+#X text 667 108 try clicking on some of these presets;
+#X msg 794 141 57 61 75 68 63;
+#X msg 802 166 50 62 88 78 61;
+#X obj 206 417 *~ 0.5;
+#X obj 144 591 *~;
+#X obj 614 710 vline~;
+#X msg 624 684 0 0 \, 1 \$1 0 \, 0 \$2 \$1;
+#X obj 688 613 pack f f;
+#X floatatom 691 530 5 0 200 0 - - -;
+#X floatatom 752 532 5 1 2000 0 - - -;
+#X obj 752 556 t b f;
+#X obj 812 552 loadbang;
+#X msg 812 577 0 550;
+#X text 259 419 <---;
+#X text 227 445 be careful about numbers bigger than 1 here!;
+#X obj 611 52 loadbang;
+#X obj 35 639 lop~ 3;
+#X obj 35 614 sig~ 330;
+#X text 97 470 <--;
+#X obj 220 618 delwrite~ delay1 5000;
+#X text 194 310 can we use these bangs to trigger anything else? ->
+;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 28 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;
+#X connect 5 0 11 0;
+#X connect 6 0 23 0;
+#X connect 7 0 23 0;
+#X connect 8 0 23 0;
+#X connect 9 0 23 0;
+#X connect 10 0 23 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;
+#X connect 12 3 16 0;
+#X connect 12 4 17 0;
+#X connect 13 0 6 0;
+#X connect 14 0 7 0;
+#X connect 15 0 8 0;
+#X connect 16 0 9 0;
+#X connect 17 0 10 0;
+#X connect 18 0 19 0;
+#X connect 19 0 39 0;
+#X connect 20 0 21 1;
+#X connect 21 0 25 0;
+#X connect 22 0 21 0;
+#X connect 23 0 42 0;
+#X connect 23 1 24 0;
+#X connect 24 0 34 0;
+#X connect 25 0 0 0;
+#X connect 25 0 0 1;
+#X connect 26 0 6 0;
+#X connect 26 1 7 0;
+#X connect 26 2 8 0;
+#X connect 26 3 9 0;
+#X connect 26 4 10 0;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;
+#X connect 30 0 22 0;
+#X connect 30 0 31 0;
+#X connect 32 0 38 0;
+#X connect 34 0 18 0;
+#X connect 36 0 26 0;
+#X connect 37 0 26 0;
+#X connect 38 0 54 0;
+#X connect 39 0 22 0;
+#X connect 39 0 54 0;
+#X connect 40 0 39 1;
+#X connect 41 0 40 0;
+#X connect 42 0 41 0;
+#X connect 43 0 42 0;
+#X connect 44 0 45 0;
+#X connect 45 0 42 0;
+#X connect 45 1 42 1;
+#X connect 46 0 47 0;
+#X connect 47 0 42 0;
+#X connect 50 0 27 0;
+#X connect 51 0 30 0;
+#X connect 52 0 51 0;

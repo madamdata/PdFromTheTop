@@ -1,0 +1,43 @@
+#N canvas 963 35 954 1010 12;
+#X obj 247 722 dac~;
+#X obj 256 563 *~ 0.3;
+#X obj 256 638 *~ 0.5;
+#X obj 385 487 vsl 35 128 0 1 0 1 empty empty vol 0 -9 0 10 -262144
+-1 -1 8600 1;
+#X obj 212 369 *~ 1.5;
+#X obj 212 412 clip~ -1 1;
+#X obj 231 501 *~;
+#X obj 414 356 +~ 1;
+#X obj 414 395 *~ 0.5;
+#X obj 414 440 +~;
+#X obj 535 276 vsl 35 128 0 0.8 0 1 empty empty depth 0 -9 0 10 -262144
+-1 -1 1900 1;
+#X obj 419 31 vsl 25 128 0.5 1000 1 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7200 1;
+#X text 451 63 try connecting this to something.;
+#X text 457 103 right click and open "properties" to set the min and
+max values. Changing those numbers will have a big impact on what this
+slider does.;
+#X obj 292 240 *~ 400;
+#X obj 415 311 osc~ 3;
+#X obj 244 162 *~ 80;
+#X obj 294 206 osc~ 1000;
+#X obj 246 126 osc~ 0.3;
+#X obj 211 321 osc~;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 1;
+#X connect 10 0 7 1;
+#X connect 14 0 19 0;
+#X connect 15 0 7 0;
+#X connect 16 0 17 0;
+#X connect 17 0 14 0;
+#X connect 18 0 16 0;
+#X connect 19 0 4 0;
